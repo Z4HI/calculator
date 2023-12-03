@@ -17,6 +17,9 @@ buttons.forEach((button)=>
         else if(button.textContent === 'clear'){
             clearDisplay();
         }
+        else if(button.textContent === 'DEL'){
+            del();
+        }
         else if(button.textContent === '='){
             calculate();
         }
@@ -30,6 +33,11 @@ function clearDisplay(){
     current.innerHTML = '';
     output.innerHTML = '';
 }
+function del(){
+
+    current.innerHTML = current.innerHTML.slice(0,-1);
+
+}
 function calculate(){
     const answer = eval(current.innerHTML)
     
@@ -39,7 +47,6 @@ function calculate(){
     output.innerHTML =  (parseFloat(answer)).toFixed(2);
 }
 }
-
 function appendNumber(value){
     
     const operators = ['+','-','*','/'];
