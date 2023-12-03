@@ -10,28 +10,36 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background: -webkit-linear-gradient(45deg,cyan,lightgreen);
-flex-grow: 0;
+background: -webkit-linear-gradient(45deg,#2196f3,#e91e63);
+
 
 }
 
 .calculator{
 
-height: 300px;
-padding: 10px;
+height: 500px;
+width:400px;
+padding: 40px;
 border-radius: 20px;
 font-size: 20px;
-background-color: white;
-max-width: 300px;
-
+background: rgba(255, 255, 255, 0.157);
+perspective: 1000px;
+box-shadow: 20px white;
 }
 
+.header{
+    display: flex;
+    color: white;
+    justify-content: end;
+    
+}
 .display{
     height: 20%;
-    background-color: black;
+    width: 100%;
+    opacity: 90%;
     color: white;
+    background-color: rgba(255, 255, 255, 0.032);
     border-radius: 10px;
-    max-width: 220px;
     text-align: center;
     align-items: center;
     display: grid;
@@ -42,18 +50,54 @@ max-width: 300px;
     ;
 }
 
+
 .output{
     grid-area: output;
-    background-color: black;
+    background:none;
     font-size: 30px;
     overflow: hidden;
+    
 }
+.wobble{
+    animation: wobble 1s ease 0s 1 normal forwards;
+}
+@keyframes wobble {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
 .previous{
-    background-color: red;
+    display: block;
+    background-color:none;
     grid-area: previous;
+    font-size: 8px;
+    
     }
 .current{
- background-color: blue;
+ background-color:none;
  grid-area: current;
  overflow: hidden;
 }
@@ -62,16 +106,29 @@ max-width: 300px;
 .keys{
 
     display: grid;
-    grid-template-columns: repeat(4,50px);
+    justify-content: center;
+    grid-template-columns: repeat(4,25%);
     height: 80%;
-    gap: 5px;
+    width: 100%;
+    gap: 0px;
     padding-top: 5px;
 }
 
 .keys button{
+    color: white;
     font-size: 15px;
-    background-color:rgba(138, 135, 135, 0.532);  
+    background-color:rgba(255, 255, 255, 0);  
+    border: 1px rgba(255, 255, 255, 0.183) solid;
+    border-radius: 20px;
+    transition: all .3s ease;
+    margin: 3px;
+}
 
+.keys button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgb(55, 152, 255);
+    font-size: 15px;
 }
 
 .equals{

@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll('button')
 const output = document.querySelector('.output')
 const current = document.querySelector('.current')
 const previous = document.querySelector('.previous')
+const equals = document.querySelector('.equals');
 
 
 buttons.forEach((button)=>
@@ -22,6 +23,7 @@ buttons.forEach((button)=>
         }
         else if(button.textContent === '='){
             calculate();
+                
         }
         else{
             appendNumber(button.textContent)
@@ -43,6 +45,7 @@ function calculate(){
     
     if(answer%1===0){
         output.innerHTML = answer;
+        
     }else{
     output.innerHTML =  (parseFloat(answer)).toFixed(2);
 }
@@ -62,3 +65,9 @@ function appendNumber(value){
     }
 }
 
+function wobble(){
+
+    output.style.animation = "wobble 1s ease 0s infinite normal forwards;"
+
+
+}
