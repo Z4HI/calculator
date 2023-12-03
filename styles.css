@@ -17,29 +17,33 @@ background: -webkit-linear-gradient(45deg,#2196f3,#e91e63);
 
 .calculator{
 
-height: 500px;
-width:400px;
+height: 70%;
+width:50%;
+max-width: 300px;
 padding: 40px;
 border-radius: 20px;
 font-size: 20px;
 background: rgba(255, 255, 255, 0.157);
 perspective: 1000px;
-box-shadow: 20px white;
+box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px rgba(255, 255, 255, 0.191), 20px 20px 0px 0px rgba(255, 255, 255, 0.115), 25px 25px 0px 0px rgba(255, 255, 255, 0.032), 4px 11px 15px 22px rgba(0, 0, 0, 0.023);
+transform: skewX(-15deg);
 }
 
 .header{
     display: flex;
-    color: white;
+    color: rgba(255, 255, 255, 0.441);
+    background-color:rgba(255, 255, 255, 0.064);
     justify-content: end;
+    border-radius: 20px;
     
 }
 .display{
     height: 20%;
     width: 100%;
-    opacity: 90%;
     color: white;
+    text-shadow: 3px 5px 2px #474747;
     background-color: rgba(255, 255, 255, 0.032);
-    border-radius: 10px;
+    border-radius: 0px 10px 0px 10px;
     text-align: center;
     align-items: center;
     display: grid;
@@ -54,7 +58,7 @@ box-shadow: 20px white;
 .output{
     grid-area: output;
     background:none;
-    font-size: 30px;
+    font-size: 50px;
     overflow: hidden;
     
 }
@@ -116,6 +120,7 @@ box-shadow: 20px white;
 
 .keys button{
     color: white;
+    text-shadow: 3px 5px 2px #474747;
     font-size: 15px;
     background-color:rgba(255, 255, 255, 0);  
     border: 1px rgba(255, 255, 255, 0.183) solid;
@@ -126,9 +131,10 @@ box-shadow: 20px white;
 
 .keys button:hover{
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.2) translateX(-10px);
     background-color: rgb(55, 152, 255);
     font-size: 15px;
+    
 }
 
 .equals{
