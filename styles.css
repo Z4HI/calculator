@@ -11,6 +11,8 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 background: -webkit-linear-gradient(45deg,cyan,lightgreen);
+flex-grow: 0;
+
 }
 
 .calculator{
@@ -20,6 +22,7 @@ padding: 10px;
 border-radius: 20px;
 font-size: 20px;
 background-color: white;
+max-width: 300px;
 
 }
 
@@ -28,7 +31,7 @@ background-color: white;
     background-color: black;
     color: white;
     border-radius: 10px;
-
+    max-width: 220px;
     text-align: center;
     align-items: center;
     display: grid;
@@ -43,6 +46,7 @@ background-color: white;
     grid-area: output;
     background-color: black;
     font-size: 30px;
+    overflow: hidden;
 }
 .previous{
     background-color: red;
@@ -51,6 +55,7 @@ background-color: white;
 .current{
  background-color: blue;
  grid-area: current;
+ overflow: hidden;
 }
 
 

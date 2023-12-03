@@ -8,8 +8,13 @@ const previous = document.querySelector('.previous')
 buttons.forEach((button)=>
 
     button.addEventListener('click',() =>{
+        const invalidsigns = ['*','/','%'];
+        const firstChar = current.innerHTML.charAt(0);
 
-        if(button.textContent === 'clear'){
+        if(invalidsigns.includes(firstChar)){
+            clearDisplay();
+        }    
+        else if(button.textContent === 'clear'){
             clearDisplay();
         }
         else if(button.textContent === '='){
@@ -25,15 +30,23 @@ function clearDisplay(){
     current.innerHTML = '';
     output.innerHTML = '';
 }
-
 function calculate(){
-
-    output.innerHTML = eval(current.innerHTML)
-    output.value = ''
-
+    output.innerHTML = parseFloat(eval(current.innerHTML)).toFixed(2)
+    output.value = '';
 }
 
 function appendNumber(value){
+    
+    const operators = ['+','-','*','/'];
+    const lastChar = current.innerHTML.slice(-1);
 
-    current.innerHTML += value;
+    if((operators.includes(value) && operators.includes(lastChar))){
+
+        return;
+    }
+    
+    else{
+       current.innerHTML+=value;
+    }
 }
+
