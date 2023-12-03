@@ -31,8 +31,13 @@ function clearDisplay(){
     output.innerHTML = '';
 }
 function calculate(){
-    output.innerHTML = parseFloat(eval(current.innerHTML)).toFixed(2)
-    output.value = '';
+    const answer = eval(current.innerHTML)
+    
+    if(answer%1===0){
+        output.innerHTML = answer;
+    }else{
+    output.innerHTML =  (parseFloat(answer)).toFixed(2);
+}
 }
 
 function appendNumber(value){
