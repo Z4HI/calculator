@@ -6,6 +6,7 @@ const previous = document.querySelector('.previous')
 const equals = document.querySelector('.equals');
 
 
+
 buttons.forEach((button)=>
 
     button.addEventListener('click',() =>{
@@ -23,7 +24,7 @@ buttons.forEach((button)=>
         }
         else if(button.textContent === '='){
             calculate();
-                
+               
         }
         else{
             appendNumber(button.textContent)
@@ -65,9 +66,23 @@ function appendNumber(value){
     }
 }
 
-function wobble(){
+const app = document.querySelector('.app');
+const calculator = document.querySelector('.calculator');
 
-    output.style.animation = "wobble 1s ease 0s infinite normal forwards;"
+app.addEventListener( 'mousemove',(e) =>{
+let xAxis = (window.innerWidth/2 - e.pageX)/25;
+let yAxis = (window.innerHeight/2 - e.pageY)/-10;
 
+calculator.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
 
-}
+})
+
+//animate in
+app.addEventListener('mouseenter', (e) =>{
+    calculator.style.transition = "all 0.1s ease "
+})
+//animate out
+app.addEventListener('mouseleave', (e) =>{
+    calculator.style.transform = `rotateY(0deg) rotateX(0deg)`
+    calculator.style.transition = "all 0.5s ease"
+})
